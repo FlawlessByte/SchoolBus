@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "921309950730",
+    "firebase_url": "https://bussattandance.firebaseio.com",
+    "project_id": "bussattandance",
+    "storage_bucket": "bussattandance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921309950730:android:11f2064bd12012de",
+        "android_client_info": {
+          "package_name": "co.realinventor.schoolbus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921309950730-pauc3h11fovkl7mjt3qagpmpdihv1qdp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.realinventor.schoolbus",
+            "certificate_hash": "ee69fb920bf87d4e0ee724af65130c07b6fe8182"
+          }
+        },
+        {
+          "client_id": "921309950730-9pfgfv1a5bk94t5acr58b1hg6pkdl7s5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5vDFHPBSukJ1Tjyv6ENuaqQyMd60EzZo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921309950730-9pfgfv1a5bk94t5acr58b1hg6pkdl7s5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

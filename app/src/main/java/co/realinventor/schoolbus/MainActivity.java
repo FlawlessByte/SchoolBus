@@ -2,6 +2,8 @@ package co.realinventor.schoolbus;
 
 import androidx.appcompat.app.AppCompatActivity;
 import co.realinventor.schoolbus.Admin.AdminHomeActivity;
+import co.realinventor.schoolbus.Admin.AdminLoginActivity;
+import co.realinventor.schoolbus.Parent.ParentHomeActivity;
 import co.realinventor.schoolbus.Parent.ParentLoginActivity;
 
 import android.content.Intent;
@@ -17,12 +19,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void driverModeSelected(View view){
-
+        startActivity(new Intent(this, ParentLoginActivity.class).putExtra("usertype","driver"));
     }
     public void parentModeSelected(View view){
-        startActivity(new Intent(this, ParentLoginActivity.class));
+        startActivity(new Intent(this, ParentLoginActivity.class).putExtra("usertype","parent"));
     }
     public void adminModeSelected(View view){
-        startActivity(new Intent(this, AdminHomeActivity.class));
+        startActivity(new Intent(this, AdminLoginActivity.class));
     }
 }

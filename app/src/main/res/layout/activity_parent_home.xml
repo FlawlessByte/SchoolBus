@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".Parent.ParentHomeActivity">
 
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:columnCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_margin="8dp"
+            android:onClick="attendenceSelected"
+            android:text="Attendence" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_margin="8dp"
+            android:onClick="notificationSelected"
+            android:text="Notification" />
+
+    </GridLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

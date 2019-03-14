@@ -11,7 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Parent.ParentHomeActivity"></activity>
+        <activity android:name=".Admin.AdminLoginActivity"></activity>
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/FullScreenMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Parent.NotificationViewActivity" />
+        <activity android:name=".Driver.DriverHomeActivity" />
+        <activity android:name=".Parent.ParentAttendenceActivity" />
+        <activity android:name=".Admin.AttendenceDayActivity" />
+        <activity android:name=".Parent.ParentHomeActivity" />
         <activity android:name=".Parent.ParentLoginActivity" />
         <activity android:name=".Admin.ViewAttendenceActivity" />
         <activity android:name=".Admin.ViewDriverActivity" />
@@ -19,13 +33,7 @@
         <activity android:name=".Admin.AddDriverActivity" />
         <activity android:name=".Admin.AddStudentActivity" />
         <activity android:name=".Admin.AdminHomeActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

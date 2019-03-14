@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import co.realinventor.schoolbus.Admin.ViewStudentActivity;
 import co.realinventor.schoolbus.Common.ValidUsers;
+import co.realinventor.schoolbus.Driver.DriverHomeActivity;
 import co.realinventor.schoolbus.R;
 
 import android.content.Intent;
@@ -26,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,11 +45,16 @@ public class ParentLoginActivity extends AppCompatActivity {
     private String mVerificationId;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
     final String TAG = "ParentLoginActivity";
+    private String phone_no, USER_TYPE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_login);
+
+        USER_TYPE = getIntent().getStringExtra("usertype");
+
+
 
         parentPhoneInput = findViewById(R.id.parentPhoneInput);
         parentOtpInput = findViewById(R.id.parentOtpInput);
@@ -90,7 +97,7 @@ public class ParentLoginActivity extends AppCompatActivity {
                                     sendOtp(phone);
                                 }
                                 else{
-                                    Toast.makeText(ParentLoginActivity.this, "Not a registered parent!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ParentLoginActivity.this, "Not a registered "+USER_TYPE+"!", Toast.LENGTH_SHORT).show();
                                 }
 
                             }
@@ -113,6 +120,7 @@ public class ParentLoginActivity extends AppCompatActivity {
     }
 
     private void sendOtp(String phone){
+        phone_no = phone;
 
         PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
@@ -197,7 +205,27 @@ public class ParentLoginActivity extends AppCompatActivity {
 
                             FirebaseUser user = task.getResult().getUser();
 
-                            startActivity(new Intent(ParentLoginActivity.this, ParentHomeActivity.class));
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(phone_no)
+                                    .build();
+
+                            FirebaseAuth.getInstance().getCurrentUser().updateProfile(profileUpdates)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Log.d(TAG, "User profile updated.");
+                                            }
+                                        }
+                                    });
+
+                            Intent intent = null;
+                            if(USER_TYPE.equals("parent"))
+                                intent = new Intent(ParentLoginActivity.this, ParentHomeActivity.class);
+                            else
+                                intent = new Intent(ParentLoginActivity.this, DriverHomeActivity.class);
+                            intent.putExtra("phone", phone_no);
+                            startActivity(intent);
                             finish();
                             // ...
                         } else {

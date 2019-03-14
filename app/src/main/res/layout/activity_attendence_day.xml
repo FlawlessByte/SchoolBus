@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".Admin.ViewDriverActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:text="Attendence"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progessBarAttendence"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/textView1"
+        android:indeterminate="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/attendenceRecyclerView"
+        android:layout_above="@+id/sendNotificationButton"
+        android:layout_margin="8dp"
+        android:layout_below="@id/progessBarAttendence">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sendNotificationButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.MaterialComponents.Button"
+        android:text="Send Notification!" />
+
+</RelativeLayout>

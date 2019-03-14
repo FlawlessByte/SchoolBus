@@ -28,4 +28,7 @@
     <string name="btn_sign_out">Sign Out</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="attendence_am_not_ok">Dear parent, your son/daughter has not entered the bus at morning section!</string>
+    <string name="attendence_pm_not_ok">Dear parent, your son/daughter has not entered the bus at afternoon section!</string>
+    <string name="attendence_fully_absent">Dear parent, your son/daughter is absent today!</string>
 </resources>

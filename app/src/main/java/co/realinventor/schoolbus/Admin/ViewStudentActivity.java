@@ -7,6 +7,7 @@ import co.realinventor.schoolbus.R;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -50,17 +51,20 @@ public class ViewStudentActivity extends AppCompatActivity {
             rfidQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Student student = dataSnapshot.getValue(Student.class);
-                    if(student != null){
-                        StudentViewDialog.currentStudent = student;
-                        StudentViewDialog dialog = new StudentViewDialog();
-                        dialog.show(getSupportFragmentManager().beginTransaction(), StudentViewDialog.TAG);
-                        progressBar.setVisibility(View.INVISIBLE);
+                    for(DataSnapshot data: dataSnapshot.getChildren()){
+                        Student student = data.getValue(Student.class);
+                        if(student != null){
+                            StudentViewDialog dialog = new StudentViewDialog();
+                            StudentViewDialog.currentStudent = student;
+                            dialog.show(getSupportFragmentManager().beginTransaction(), StudentViewDialog.TAG);
+                            progressBar.setVisibility(View.INVISIBLE);
+                        }
+                        else{
+                            Toast.makeText(ViewStudentActivity.this, "No result found!", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
+                        }
                     }
-                    else{
-                        Toast.makeText(ViewStudentActivity.this, "No result found!", Toast.LENGTH_SHORT).show();
-                        progressBar.setVisibility(View.INVISIBLE);
-                    }
+
                 }
 
                 @Override

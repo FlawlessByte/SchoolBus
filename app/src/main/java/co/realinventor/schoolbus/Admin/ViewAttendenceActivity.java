@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import co.realinventor.schoolbus.R;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -18,6 +21,8 @@ public class ViewAttendenceActivity extends AppCompatActivity {
     private ListView attendenceListView;
     private DatabaseReference ref;
     private ArrayAdapter adapter;
+    private String[] dateList;
+    private String USER_TYPE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +31,20 @@ public class ViewAttendenceActivity extends AppCompatActivity {
 
         attendenceListView = findViewById(R.id.attendenceListView);
 
+        try{
+            USER_TYPE = getIntent().getStringExtra("usertype");
+        }
+        catch (Exception e){
+            USER_TYPE = "none";
+        }
+
         ref = FirebaseDatabase.getInstance().getReference();
 
         ref.child("attandanceList").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int count = 0;
-                String[] dateList = new String[(int)dataSnapshot.getChildrenCount()];
+                dateList = new String[(int)dataSnapshot.getChildrenCount()];
 
                 for(DataSnapshot data : dataSnapshot.getChildren()){
                     dateList[count] = data.getKey();
@@ -41,6 +53,15 @@ public class ViewAttendenceActivity extends AppCompatActivity {
 
                 adapter = new ArrayAdapter<String>(ViewAttendenceActivity.this,R.layout.date_list_item, dateList);
                 attendenceListView.setAdapter(adapter);
+                attendenceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(ViewAttendenceActivity.this, AttendenceDayActivity.class);
+                        intent.putExtra("date",dateList[position]);
+                        intent.putExtra("usertype", USER_TYPE);
+                        startActivity(intent);
+                    }
+                });
 
             }
 
@@ -51,5 +72,11 @@ public class ViewAttendenceActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
     }
 }

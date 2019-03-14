@@ -5,7 +5,9 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
     public String uid, name, regNo, address, stop, busNo, contact, rfid;
 
     public Student() {

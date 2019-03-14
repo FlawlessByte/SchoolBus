@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFF">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarDialogStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- YOUR CUSTOM VIEWS HERE -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Student Name"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:id="@+id/textViewStudentName"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Reg. No"
+                android:id="@+id/textViewStudentRegNo"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:layout_margin="5dp"
+                android:background="@drawable/right_button_btn_line"
+                android:layout_below="@+id/textViewStudentName"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Address"
+                android:id="@+id/textViewStudentAddress"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:layout_margin="5dp"
+                android:background="@drawable/right_button_btn_line"
+                android:layout_below="@+id/textViewStudentRegNo"
+                android:gravity="center"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Stop"
+                android:id="@+id/textViewStudentStop"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:layout_margin="5dp"
+                android:background="@drawable/right_button_btn_line"
+                android:layout_below="@+id/textViewStudentAddress"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Bus No"
+                android:id="@+id/textViewStudentBusNo"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:layout_margin="5dp"
+                android:background="@drawable/right_button_btn_line"
+                android:layout_below="@+id/textViewStudentStop"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Phone"
+                android:id="@+id/textViewStudentPhone"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:layout_margin="5dp"
+                android:background="@drawable/right_button_btn_line"
+                android:layout_below="@+id/textViewStudentBusNo"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="RFID"
+                android:id="@+id/textViewStudentRFID"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:layout_margin="5dp"
+                android:background="@drawable/right_button_btn_line"
+                android:layout_below="@+id/textViewStudentPhone"
+                android:gravity="center"/>
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

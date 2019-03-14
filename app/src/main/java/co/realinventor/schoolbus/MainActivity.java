@@ -2,6 +2,7 @@ package co.realinventor.schoolbus;
 
 import androidx.appcompat.app.AppCompatActivity;
 import co.realinventor.schoolbus.Admin.AdminHomeActivity;
+import co.realinventor.schoolbus.Parent.ParentLoginActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void parentModeSelected(View view){
-
+        startActivity(new Intent(this, ParentLoginActivity.class));
     }
     public void adminModeSelected(View view){
         startActivity(new Intent(this, AdminHomeActivity.class));

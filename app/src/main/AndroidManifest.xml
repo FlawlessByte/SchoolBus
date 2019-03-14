@@ -3,6 +3,7 @@
     package="co.realinventor.schoolbus">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Admin.ViewAttendenceActivity"></activity>
+        <activity android:name=".Parent.ParentHomeActivity"></activity>
+        <activity android:name=".Parent.ParentLoginActivity" />
+        <activity android:name=".Admin.ViewAttendenceActivity" />
         <activity android:name=".Admin.ViewDriverActivity" />
         <activity android:name=".Admin.ViewStudentActivity" />
         <activity android:name=".Admin.AddDriverActivity" />

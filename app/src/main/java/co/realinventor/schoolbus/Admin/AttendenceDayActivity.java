@@ -44,7 +44,7 @@ public class AttendenceDayActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
     private MaterialButton button;
-    private String USER_TYPE;
+    private String USER_TYPE = "none";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,9 @@ public class AttendenceDayActivity extends AppCompatActivity {
         catch (Exception e){
             USER_TYPE = "none";
         }
+        if(USER_TYPE == null){
+            USER_TYPE = "";
+        }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +70,7 @@ public class AttendenceDayActivity extends AppCompatActivity {
                 sendNotifications();
             }
         });
-        if(!USER_TYPE.equals("driver"))
+        if(!(USER_TYPE.equals("driver")))
             button.setVisibility(View.GONE);
 
         mAdapter = new AttendenceAdapter(attendenceList);

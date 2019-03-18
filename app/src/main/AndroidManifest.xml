@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Admin.AdminLoginActivity"></activity>
+        <activity android:name=".AboutUsActivity"
+            android:theme="@style/FullScreenMode"></activity>
+        <activity android:name=".Admin.AdminLoginActivity" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/FullScreenMode">
@@ -33,7 +35,8 @@
         <activity android:name=".Admin.AddDriverActivity" />
         <activity android:name=".Admin.AddStudentActivity" />
         <activity android:name=".Admin.AdminHomeActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+            android:theme="@style/FullScreenMode"/>
     </application>
 
 </manifest>

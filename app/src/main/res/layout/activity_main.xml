@@ -4,47 +4,169 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:columnCount="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_height="150dp"
-            android:layout_width="150dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_margin="8dp"
-            android:tag="driver"
-            android:onClick="driverModeSelected"
-            android:text="Driver" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_height="150dp"
-            android:layout_width="150dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_margin="8dp"
-            android:tag="admin"
-            android:onClick="adminModeSelected"
-            android:text="Admin" />
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:layout_weight="0.5">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_height="150dp"
-            android:layout_width="150dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_margin="8dp"
-            android:onClick="parentModeSelected"
-            android:tag="parent"
-            android:text="Parent" />
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:weightSum="1"
+            android:layout_weight="0.5">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:weightSum="1"
+            android:layout_weight="0.5">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <Button
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:background="@drawable/right_button_btn_line"
+                    android:gravity="center|bottom"
+                    android:layout_margin="8dp"
+                    android:tag="admin"
+                    android:onClick="adminModeSelected"
+                    android:padding="8dp"
+                    android:text="Admin" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/admin"
+                    android:padding="8dp"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+                <Button
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:background="@drawable/right_button_btn_line"
+                    android:gravity="center|bottom"
+                    android:layout_margin="8dp"
+                    android:tag="admin"
+                    android:onClick="parentModeSelected"
+                    android:padding="8dp"
+                    android:text="Parent" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/parent"
+                    android:padding="8dp"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+        </TableRow>
 
 
-    </GridLayout>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:weightSum="1"
+            android:layout_weight="0.5">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+                <Button
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:background="@drawable/right_button_btn_line"
+                    android:gravity="center|bottom"
+                    android:layout_margin="8dp"
+                    android:tag="admin"
+                    android:onClick="driverModeSelected"
+                    android:padding="8dp"
+                    android:text="Driver" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/driver"
+                    android:padding="8dp"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
 
+                <Button
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:background="@drawable/right_button_btn_line"
+                    android:gravity="center|bottom"
+                    android:layout_margin="8dp"
+                    android:tag="admin"
+                    android:onClick="aboutUsModeSelected"
+                    android:padding="8dp"
+                    android:text="About Us" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/about"
+                    android:padding="8dp"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+        </TableRow>
+
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
